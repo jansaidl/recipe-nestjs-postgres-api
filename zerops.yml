@@ -10,7 +10,6 @@ api20:
   run:
     prepare:
       - echo "foobar22314Aě"
-      - exit 1
     start: npm run start:prod
 
 api18:
@@ -25,7 +24,6 @@ api18:
   run:
     prepare:
       - echo "foobar22314Aě"
-      - exit 1
     start: npm run start:prod
 
 api16:
@@ -40,5 +38,4 @@ api16:
   run:
     prepare:
       - echo "foobar22314Aě"
-      - exit 1
     start: npm run start:prod
