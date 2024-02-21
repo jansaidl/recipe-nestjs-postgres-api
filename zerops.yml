@@ -1,4 +1,19 @@
-api:
+api20:
+  build:
+    base: [ nodejs@20 ]
+    build:
+      - npm i --verbose
+      - npm run build --verbose
+      # - exit 1
+    deploy: [ './dist', 'node_modules', 'package.json' ]
+    # cache: [ 'node_modules', 'package-lock.json' ]
+  run:
+    prepare:
+      - echo "foobar22314Aě"
+      - exit 1
+    start: npm run start:prod
+
+api18:
   build:
     base: [ nodejs@18 ]
     build:
@@ -8,18 +23,22 @@ api:
     deploy: [ './dist', 'node_modules', 'package.json' ]
     # cache: [ 'node_modules', 'package-lock.json' ]
   run:
-    # prepare:
-      # - echo "foobar22314Aě"
-      # - exit 1
+    prepare:
+      - echo "foobar22314Aě"
+      - exit 1
     start: npm run start:prod
 
-api2:
+api16:
   build:
     base: [ nodejs@16 ]
     build:
-      - npm i
-      - npm run build
+      - npm i --verbose
+      - npm run build --verbose
+      # - exit 1
     deploy: [ './dist', 'node_modules', 'package.json' ]
-    # cache: [ 'node_modules' ]
+    # cache: [ 'node_modules', 'package-lock.json' ]
   run:
+    prepare:
+      - echo "foobar22314Aě"
+      - exit 1
     start: npm run start:prod
